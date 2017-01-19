@@ -13,7 +13,14 @@ import { ProdutoPage } from '../pages/produto/produto';
     ProdutoPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      menuType: 'overlay',
+      platforms: {
+        ios: {
+          menuType: 'overlay',
+        }
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

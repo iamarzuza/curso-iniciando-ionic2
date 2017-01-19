@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, MenuController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
@@ -13,14 +13,14 @@ import { ProdutoPage } from '../pages/produto/produto';
 export class MyApp {
 
   rootPage = HomePage;
-  pages : Array<{ component : any, nome : string }> ;
+  pages : Array<{ component : any, nome : string, icon : string }> ;
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, public menuCtrl: MenuController) {
 
     this.pages = [
-      { component: HomePage, nome : "Página Inicial"},
-      { component: ClientePage, nome : "Clientes"},
-      { component: ProdutoPage, nome : "Produtos"}
+      { component: HomePage, nome : "Página Inicial", icon : "home"  },
+      { component: ClientePage, nome : "Clientes", icon : "body"},
+      { component: ProdutoPage, nome : "Produtos", icon : "flower"}
     ];
 
     platform.ready().then(() => {
@@ -34,7 +34,13 @@ export class MyApp {
   // p : any
   openPage (p) {
       this.rootPage = p.component;
-      console.log ("Teste" + p.nome );
+      //console.log ("Teste" + p.nome );
+      this.menuCtrl.close();
   }
+
+  abriuMenu() {
+    console.log("abriu menu");
+  }
+
 
 }

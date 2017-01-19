@@ -1,12 +1,23 @@
 <ion-header>
+
   <ion-navbar>
-    <button  menuToggle >
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    <ion-buttons  left>
+      <button   menuToggle="left" >
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
 
     <ion-title>
       Cachepot Presentes e Interiores
     </ion-title>
+
+    <ion-buttons  right>
+      <button   menuToggle="right" >
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
   </ion-navbar>
 
 </ion-header>
@@ -14,5 +25,11 @@
 <ion-content padding>
 
   <p>Endereço: Rua T27 n 778 S Bueno</p>
+
+  <button ion-button (click)="openMenu()" >Abre Menu</button>
+  <button ion-button (click)="closeMenu()" >Fecha Menu</button>
+  <button ion-button (click)="toggleMenu()" >Alterna Menu</button>
+
+  <button ion-button (click)="pushPage()" >Produto </button>
 
 </ion-content>
