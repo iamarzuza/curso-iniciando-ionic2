@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ConectService } from "../../providers/conect-service"
 
 /*
   Generated class for the Cliente page.
@@ -13,10 +14,22 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ClientePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private conectService : ConectService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClientePage');
+  }
+
+  buscarCEP () : void  {
+      console.log("Chamando o busca CEP");
+
+      this.conectService.getCep("74884613").then( (resp) => {
+         console.log(resp);
+         }
+      ).catch ( (err) => {
+         console.log(err);
+      })
   }
 
 }

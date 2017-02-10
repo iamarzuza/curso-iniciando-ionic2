@@ -4,7 +4,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ClientePage } from '../pages/cliente/cliente';
 import { ProdutoPage } from '../pages/produto/produto';
-
+import { ConectService } from "../providers/conect-service"
 @NgModule({
   declarations: [
     MyApp,
@@ -29,6 +29,6 @@ import { ProdutoPage } from '../pages/produto/produto';
     ClientePage,
     ProdutoPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConectService]
 })
 export class AppModule {}
