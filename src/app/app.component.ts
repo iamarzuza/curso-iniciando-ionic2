@@ -5,6 +5,10 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HomePage } from '../pages/home/home';
 import { ClientePage } from '../pages/cliente/cliente';
 import { ProdutoPage } from '../pages/produto/produto';
+import { AlertPage } from '../pages/alert/alert';
+import { BotaoPage } from '../pages/botao/botao';
+import { CardPage } from '../pages/card/card';
+import { ModalPage } from '../pages/modal/modal';
 
 
 @Component({
@@ -20,10 +24,14 @@ export class MyApp {
     this.pages = [
       { component: HomePage, nome : "Página Inicial", icon : "home"  },
       { component: ClientePage, nome : "Clientes", icon : "body"},
-      { component: ProdutoPage, nome : "Produtos", icon : "flower"}
+      { component: ProdutoPage, nome : "Produtos", icon : "flower"},
+      { component: AlertPage, nome : "Alerta", icon : "alert"},
+      { component: BotaoPage, nome : "Botão", icon : "bulb"},
+      { component: ModalPage, nome : "Modal", icon : "bookmarks"},
+      { component: CardPage, nome : "Cards", icon : "albums"}
     ];
 
-    platform.ready().then(() => {
+    platform.ready().then( () => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();

@@ -18,7 +18,7 @@ export class ConectService {
 
   getCep ( cep: string) : Promise<Response>  {
       //return  this.http.get("").map(res => res.json()).toPromise();
-      return  this.http.get( "https://viacep.com.br/ws/" + cep + "/json/").toPromise();
+      return  this.http.get( 'https://viacep.com.br/ws/' + cep + '/json/').toPromise();
   }
 
 }
